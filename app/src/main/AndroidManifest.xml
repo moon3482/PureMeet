@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.PureMeeting">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="com.google.android.setupwizard.SETUP_COMPAT_SERVICE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="com.example.PureMeeting.GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.example.PureMeeting.main.Schedule"></activity>
+        <activity android:name="com.example.PureMeeting.onFaceTalkSend" />
+        <activity android:name="com.example.PureMeeting.onFaceTalkReceive" />
+        <activity
+            android:name="com.example.PureMeeting.ReciveFaceTalk"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:showOnLockScreen="true"
+            android:taskAffinity="com.example.mana.ReciveFaceTalk" />
+        <activity android:name="com.example.PureMeeting.SendFaceTalk" />
+        <activity android:name="com.example.PureMeeting.PlacePickInfo" />
+        <activity android:name="com.example.PureMeeting.ZoneAdd" />
+        <activity android:name="com.example.PureMeeting.NewSubscriptionBox" />
+        <activity android:name="com.example.PureMeeting.MainPage.IdealProfileLoad" />
+        <activity android:name="com.example.PureMeeting.Pay_Activity" />
+        <activity android:name="com.example.PureMeeting.ChargeCredit" />
+        <activity android:name="com.example.PureMeeting.InsertMyinfoDetail" />
+        <activity android:name="com.example.PureMeeting.MyIdealTypeSetting" />
+        <activity android:name="com.example.PureMeeting.ShopInfomation.ShopInfomation" />
+        <activity android:name="com.example.PureMeeting.MyProfileLoad" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="@string/naver_id" />
+
+        <activity android:name="com.example.PureMeeting.main.mapPage" />
+        <activity android:name="com.example.PureMeeting.main.MyPage" />
+        <activity android:name="com.example.PureMeeting.ChatPage.chatPage" />
+        <activity android:name="com.example.PureMeeting.MainPage.mainPage" />
+        <activity android:name="com.example.PureMeeting.Camera.Camera1" />
+
+        <service
+            android:name="com.example.PureMeeting.MyFirebaseInstanceIDService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.example.PureMeeting.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity android:name="com.example.PureMeeting.Signup_information_input" />
+        <activity
+            android:name="com.example.PureMeeting.MainActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.PureMeeting.Signup_Terms_Activity" />
+        <activity
+            android:name="com.example.PureMeeting.Signup_information_input"
+            tools:ignore="all" />
+        <activity
+            android:name="com.example.PureMeeting.chating.Client"
+            android:windowSoftInputMode="adjustResize"
+
+             >
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.PureMeeting.chating.Image" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>
